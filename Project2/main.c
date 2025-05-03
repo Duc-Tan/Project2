@@ -6,9 +6,14 @@
 
 
 void main() {
-	for (int i = 1; i < 11; i++) {
-		for (int j = 2; j < 10; j++) {
-			printf("%d * %d = %d\t", j, i, i * j);
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (i == 0 || i == 3 || j == 0 || j == 3) {
+				printf("*");
+			}
+			else {
+				printf(" ");
+			}
 		}
 		printf("\n");
 	}
