@@ -6,28 +6,41 @@
 
 
 void main() {
-	int arr[] = { 0, 7, 12, 9, 20 };
-	printf("Mang ban dau\n");
-	for (int i = 0; i < 5; i++) {
-		printf("%d ", arr[i]);
-	}
-	printf("\nMang nguoc chieu\n");
-	for (int i = 4; i >= 0; i--) {
-		printf("%d ", arr[i]);
-	}
-	printf("\nMang sap xep giam dan\n");
-	for (int i = 0; i < 5; i++) {
-		for (int j = i + 1; j < 5; j++) {
-			if (arr[i] < arr[j]) {
-				int temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
+	int arr[] = { 0, 7, 12, 9, 20, 23, 44, 60, 11, 1 };
+	int arr_le[10];
+	int arr_chan[10];
+	int l = 0, c = 0;
+	for (int i = 0; i < 10; i++) {
+		if (arr[i] % 2 != 0) {
+			arr_le[l] = arr[i];
+			l++;
+		}
+		else {
+			arr_chan[c] = arr[i];
+			c++;
 		}
 	}
-	for (int i = 0; i < 5; i++) {
-		printf("%d ", arr[i]);
+	printf("Mang le: ");
+	for (int i = 0; i < l; i++) {
+		printf("%d ", arr_le[i]);
 	}
-	printf("\nPhan tu lon thu hai: %d\n", arr[1]);
-	
+	printf("\nMang chan: ");
+	for (int i = 0; i < c; i++) {
+		printf("%d ", arr_chan[i]);
+	}
+
+	int index = 0;
+	int arr_new[10];
+	printf("\nTron mang: ");
+	for (int i = 0; i < l; i++) {
+		arr_new[index] = arr_le[i];
+		index++;
+	}
+	for (int i = 0; i < c; i++) {
+		arr_new[index] = arr_chan[i];
+		index++;
+	}
+	for (int i = 0; i < index; i++) {
+		printf("%d ", arr_new[i]);
+	}
 }
